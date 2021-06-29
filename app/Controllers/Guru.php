@@ -20,9 +20,18 @@ class Guru extends BaseController
 
         $data = [
             'title' => 'Daftar Guru',
-            'guru' => $guru
+            'guru' => $this->guruModel->getGuru()
         ];
 
         return view('guru/index', $data);
+    }
+
+    public function detail($id)
+    {
+        $data = [
+            'title' => 'Detai Ustadz/ah',
+            'guru' => $this->guruModel->getGuru($id)
+        ];
+        return view('guru/detail', $data);
     }
 }

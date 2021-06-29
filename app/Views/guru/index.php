@@ -24,7 +24,7 @@
                             <td><?= $g['nohp']; ?></td>
                             <td><?= $g['kelas']; ?></td>
                             <td>
-                                <a href="" type="button" class="btn btn-primary">Detail</a>
+                                <a href="/guru/<?= $g['id']; ?>" type="button" class="btn btn-primary">Detail</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
