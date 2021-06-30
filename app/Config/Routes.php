@@ -32,8 +32,13 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Guru::index');
-
+$routes->get('/guru/create', 'Guru::create');
 $routes->get('/guru/(:segment)', 'Guru::detail/$1');
+
+// $routes->get('/absensi', 'Absensi::index');
+
+
+
 
 /*
  * --------------------------------------------------------------------

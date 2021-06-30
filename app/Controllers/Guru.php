@@ -15,7 +15,6 @@ class Guru extends BaseController
     public function index()
     {
         // cara konek db dengan model 
-
         $guru = $this->guruModel->findAll();
 
         $data = [
@@ -29,9 +28,17 @@ class Guru extends BaseController
     public function detail($id)
     {
         $data = [
-            'title' => 'Detai Ustadz/ah',
+            'title' => 'Detail Ustadz/ah',
             'guru' => $this->guruModel->getGuru($id)
         ];
         return view('guru/detail', $data);
+    }
+
+    public function create()
+    {
+        $data = [
+            'title' => 'Form Tambah Data Ustadz/dzah'
+        ];
+        return view('guru/create', $data);
     }
 }

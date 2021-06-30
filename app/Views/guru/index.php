@@ -4,7 +4,8 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="mt-3">Daftar Ustadz/ah</h1>
+            <h1 class="mt-3">Daftar Ustadz/dzah</h1>
+            <a href="/guru/create" class="btn btn-primary mb-3">Tambah Data Ustadz/dzah</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -24,7 +25,7 @@
                             <td><?= $g['nohp']; ?></td>
                             <td><?= $g['kelas']; ?></td>
                             <td>
-                                <a href="/guru/<?= $g['id']; ?>" type="button" class="btn btn-primary">Detail</a>
+                                <a href="/guru/<?= $g['id']; ?>" type="button" class="btn btn-success">Detail</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

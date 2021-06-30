@@ -10,7 +10,6 @@
                     <a class="nav-link active" aria-current="page" href="/">Daftar Ust</a>
                     <a class="nav-link" href='#'>About</a>
                     <a class="nav-link" href='#'>Contact</a>
-                    <a class="nav-link" href='#'>Komik</a>
                 </div>
             </div>
         </div>
