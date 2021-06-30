@@ -8,6 +8,7 @@ class GuruModel extends Model
 {
     protected $table = 'guru';
     protected $useTimestamps = true;
+    protected $allowedFields = ['nama', 'nohp', 'kelas'];
 
     public function getGuru($id = false)
     {

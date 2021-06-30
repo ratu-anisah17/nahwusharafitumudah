@@ -4,8 +4,15 @@
 <div class="container">
     <div class="row">
         <div class="col">
+            <a href="/guru/create" class="btn btn-primary mt-3">Tambah Data Ustadz/dzah</a>
             <h1 class="mt-3">Daftar Ustadz/dzah</h1>
-            <a href="/guru/create" class="btn btn-primary mb-3">Tambah Data Ustadz/dzah</a>
+
+            <?php if (session()->getFlashdata('pesan')) : ?>
+                <div class="alert alert-info" role="alert">
+                    <?= session()->getFlashdata('pesan'); ?>
+                </div>
+            <?php endif; ?>
+
             <table class="table">
                 <thead>
                     <tr>
