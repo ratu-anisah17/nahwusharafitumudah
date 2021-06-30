@@ -62,3 +62,47 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+--
+--
+-- Struktur dari tabel `siswa`
+--
+
+CREATE TABLE `siswa` (
+  `siswaid` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `angkatan` varchar(20) NOT NULL,
+  `nohp` varchar(20) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `jilid` varchar(10) NOT NULL,
+  `tgl_mulai` datetime NOT NULL,
+  `tgl_selesai` datetime NOT NULL,
+  `jet` varchar(7) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `siswa`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`siswaid`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `siswa`
+--
+ALTER TABLE `siswa`
+  MODIFY `siswaid` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
