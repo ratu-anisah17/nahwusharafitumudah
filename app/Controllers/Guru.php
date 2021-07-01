@@ -13,7 +13,8 @@ class Guru extends BaseController
         $this->guruModel = new GuruModel();
     }
 
-    public function dashboard(){
+    public function dashboard()
+    {
         return view('mazer/index');
     }
 
@@ -74,6 +75,48 @@ class Guru extends BaseController
         ]);
 
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
+
+        return redirect()->to('/guru');
+    }
+
+    public function delete($id)
+    {
+        $this->guruModel->delete($id);
+
+        session()->setFlashdata('pesan', 'Data berhasil dihapus');
+        return redirect()->to('/guru');
+    }
+
+    public function edit($id)
+    {
+        $data = [
+            'title' => 'Form Ubah Data Ustadz/dzah',
+            'validation' => \Config\Services::validation(),
+            'guru' => $this->guruModel->getGuru($id)
+        ];
+        return view('guru/edit', $data);
+    }
+
+    public function update($id)
+    {
+        // validasi input data
+        if (!$this->validate([
+            'nama' => 'required',
+            'nohp' => 'required',
+            'kelas' => 'required'
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('/guru/edit')->withInput()->with('validation', $validation);
+        }
+
+        $this->guruModel->save([
+            'id' => $id,
+            'nama' => $this->request->getVar('nama'),
+            'nohp' => $this->request->getVar('nohp'),
+            'kelas' => $this->request->getVar('kelas')
+        ]);
+
+        session()->setFlashdata('pesan', 'Data berhasil diubah');
 
         return redirect()->to('/guru');
     }

@@ -14,8 +14,15 @@
                     <h5 class="card-title">No HP : <?= $guru['nohp']; ?></h5>
                     <h5 class="card-title">Kelas yang dipegang : <?= $guru['kelas']; ?></h5>
                     <br></br>
-                    <a href="#" class="btn btn-warning">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="/guru/edit/<?= $guru['id']; ?>" class="btn btn-warning">Edit</a>
+
+
+                    <form action="/guru/<?= $guru['id']; ?>" method="POST" class="d-inline">
+                        <?= csrf_field(); ?>
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">Delete</button>
+                    </form>
+
                 </div>
             </div>
             <h4 class="mt-5">Santri yang dipegang</h4>

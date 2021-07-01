@@ -33,9 +33,11 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Guru::index');
 $routes->get('/guru/create', 'Guru::create');
-$routes->get('/guru/(:segment)', 'Guru::detail/$1');
+$routes->get('/guru/edit/(:segment)', 'Guru::edit/$1');
+$routes->delete('/guru/(:num)', 'Guru::delete/$1');
+$routes->get('/guru/(:any)', 'Guru::detail/$1');
 
-// $routes->get('/absensi', 'Absensi::index');
+
 
 $routes->get('/dashboard', 'Guru::dashboard');
 

@@ -4,13 +4,13 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <h2 class="my-3">Form Tambah Data Ustadz/dzah</h2>
-            <form action="/guru/save" method="POST">
+            <h2 class="my-3">Form Ubah Data Ustadz/dzah</h2>
+            <form action="/guru/update/<?= $guru['id']; ?>" method="POST">
                 <?= csrf_field(); ?>
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" name="nama" autofocus value="<?= old('nama'); ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" name="nama" autofocus value="<?= (old('nama')) ? old('nama') : $guru['nama'] ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('nama'); ?>
                         </div>
@@ -19,7 +19,7 @@
                 <div class="row mb-3">
                     <label for="nohp" class="col-sm-2 col-form-label">No HP</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('nohp')) ? 'is-invalid' : ''; ?>" id="nohp" name="nohp" value="<?= old('nohp'); ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('nohp')) ? 'is-invalid' : ''; ?>" id="nohp" name="nohp" value="<?= (old('nohp')) ? old('nohp') : $guru['nohp'] ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('nohp'); ?>
                         </div>
@@ -28,7 +28,7 @@
                 <div class="row mb-3">
                     <label for="kelas" class="col-sm-2 col-form-label">Kelas</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('kelas')) ? 'is-invalid' : ''; ?>" id="kelas" name="kelas" value="<?= old('kelas'); ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('kelas')) ? 'is-invalid' : ''; ?>" id="kelas" name="kelas" value="<?= (old('kelas')) ? old('kelas') : $guru['kelas'] ?>">
                         <div class="invalid-feedback">
                             <?= $validation->getError('kelas'); ?>
                         </div>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                 </fieldset> -->
-                <button type="submit" class="btn btn-primary">Tambah Data</button>
+                <button type="submit" class="btn btn-primary">Ubah Data</button>
             </form>
         </div>
     </div>
