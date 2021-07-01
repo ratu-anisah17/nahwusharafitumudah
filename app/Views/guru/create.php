@@ -10,19 +10,28 @@
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nama" name="nama" autofocus>
+                        <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" name="nama" autofocus>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('nama'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="nohp" class="col-sm-2 col-form-label">No HP</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nohp" name="nohp" autofocus>
+                        <input type="text" class="form-control <?= ($validation->hasError('nohp')) ? 'is-invalid' : ''; ?>" id="nohp" name="nohp" autofocus>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('nohp'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="kelas" class="col-sm-2 col-form-label">Kelas</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="kelas" name="kelas" autofocus>
+                        <input type="text" class="form-control <?= ($validation->hasError('kelas')) ? 'is-invalid' : ''; ?>" id="kelas" name="kelas" autofocus>
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('kelas'); ?>
+                        </div>
                     </div>
                 </div>
                 <!-- <fieldset class="row mb-3">

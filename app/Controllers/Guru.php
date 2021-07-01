@@ -42,14 +42,26 @@ class Guru extends BaseController
 
     public function create()
     {
+        // session();
         $data = [
-            'title' => 'Form Tambah Data Ustadz/dzah'
+            'title' => 'Form Tambah Data Ustadz/dzah',
+            'validation' => \Config\Services::validation()
         ];
         return view('guru/create', $data);
     }
 
     public function save()
     {
+        // validasi input data
+        if (!$this->validate([
+            'nama' => 'required',
+            'nohp' => 'required',
+            'kelas' => 'required'
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('/guru/create')->withInput()->with('validation', $validation);
+        }
+
         $this->guruModel->save([
             'nama' => $this->request->getVar('nama'),
             'nohp' => $this->request->getVar('nohp'),
