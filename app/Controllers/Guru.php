@@ -12,6 +12,11 @@ class Guru extends BaseController
     {
         $this->guruModel = new GuruModel();
     }
+
+    public function dashboard(){
+        return view('mazer/index');
+    }
+
     public function index()
     {
         // cara konek db dengan model 
