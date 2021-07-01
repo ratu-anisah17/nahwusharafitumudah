@@ -37,6 +37,7 @@ $routes->get('/guru/(:segment)', 'Guru::detail/$1');
 
 // $routes->get('/absensi', 'Absensi::index');
 
+$routes->get('/dashboard', 'Guru::dashboard');
 
 
 
