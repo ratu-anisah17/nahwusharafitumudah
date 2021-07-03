@@ -1,40 +1,46 @@
-<?= $this->extend('layout/template'); ?>
+<?= $this->extend('mazer/layouts/app') ?>
 
 <?= $this->section('content'); ?>
+
+<div class="page-heading">
+    <h2>Form Ubah Data Ustadz/dzah</h2>
+</div>
+
 <div class="container">
     <div class="row">
-        <div class="col-8">
-            <h2 class="my-3">Form Ubah Data Ustadz/dzah</h2>
-            <form action="/guru/update/<?= $guru['id']; ?>" method="POST">
-                <?= csrf_field(); ?>
-                <div class="row mb-3">
-                    <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" name="nama" autofocus value="<?= (old('nama')) ? old('nama') : $guru['nama'] ?>">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('nama'); ?>
+        <div class="card col-md-5">
+            <div class="card-body">
+                <div>
+                    <form action="/guru/update/<?= $guru['id']; ?>" method="POST">
+                        <?= csrf_field(); ?>
+                        <div class="row mb-3">
+                            <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" name="nama" autofocus value="<?= (old('nama')) ? old('nama') : $guru['nama'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('nama'); ?>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="nohp" class="col-sm-2 col-form-label">No HP</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('nohp')) ? 'is-invalid' : ''; ?>" id="nohp" name="nohp" value="<?= (old('nohp')) ? old('nohp') : $guru['nohp'] ?>">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('nohp'); ?>
+                        <div class="row mb-3">
+                            <label for="nohp" class="col-sm-2 col-form-label">No HP</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control <?= ($validation->hasError('nohp')) ? 'is-invalid' : ''; ?>" id="nohp" name="nohp" value="<?= (old('nohp')) ? old('nohp') : $guru['nohp'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('nohp'); ?>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="kelas" class="col-sm-2 col-form-label">Kelas</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('kelas')) ? 'is-invalid' : ''; ?>" id="kelas" name="kelas" value="<?= (old('kelas')) ? old('kelas') : $guru['kelas'] ?>">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('kelas'); ?>
+                        <div class="row mb-3">
+                            <label for="kelas" class="col-sm-2 col-form-label">Kelas</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control <?= ($validation->hasError('kelas')) ? 'is-invalid' : ''; ?>" id="kelas" name="kelas" value="<?= (old('kelas')) ? old('kelas') : $guru['kelas'] ?>">
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('kelas'); ?>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!-- <fieldset class="row mb-3">
+                        <!-- <fieldset class="row mb-3">
                     <legend class="col-form-label col-sm-2 pt-0">Kelas</legend>
                     <div class="col-sm-10">
                         <div class="form-check">
@@ -63,8 +69,10 @@
                         </div>
                     </div>
                 </fieldset> -->
-                <button type="submit" class="btn btn-primary">Ubah Data</button>
-            </form>
+                        <button type="submit" class="btn btn-primary">Ubah Data</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

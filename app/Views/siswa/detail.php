@@ -1,4 +1,4 @@
-<?= $this->extend('layout/template'); ?>
+<?= $this->extend('mazer/layouts/app') ?>
 
 <?= $this->section('content'); ?>
 
@@ -24,10 +24,10 @@
                     <a href="#" class="btn btn-danger">Delete</a>
                 </div>
                 </tbody>
-            </table>
-            <a href="/siswa" class="btn btn-primary mb-3">Kembali ke Daftar Siswa</a>
+                </table>
+                <a href="/siswa" class="btn btn-primary mb-3">Kembali ke Daftar Siswa</a>
+            </div>
         </div>
     </div>
-</div>
 
-<?= $this->endSection(); ?>
+    <?= $this->endSection(); ?>

@@ -27,34 +27,20 @@ $uri3 = $uri[3] ?? '';
                         <span>Dashboard</span>
                     </a>
                 </li>
-                
-                <li class="sidebar-item <?= ($uri1 == '') ? 'active' : '' ?> ">
+
+                <li class="sidebar-item <?= ($uri1 == 'index') ? 'active' : '' ?> ">
                     <a href="/guru" class='sidebar-link'>
                         <!-- <i class="fa fa-chalkboard-teacher"></i> -->
                         <i class="fas fa-users"></i>
-                        <span>Guru </span>
+                        <span>Data Ustadz/dzah</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item <?= ($uri1 == 'layouts') ? 'active' : '' ?> has-sub">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item <?= ($uri1 == 'index') ? 'active' : '' ?>">
+                    <a href="/siswa" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
-                        <span>Layouts</span>
+                        <span>Data Santri</span>
                     </a>
-                    <ul class="submenu <?= ($uri1 == 'layouts') ? 'active' : '' ?>">
-                        <li class="submenu-item <?= ($uri2 == 'default') ? 'active' : '' ?>">
-                            <a href="/mazer/layouts/default">Default Layout</a>
-                        </li>
-                        <li class="submenu-item <?= ($uri2 == '1-column') ? 'active' : '' ?>">
-                            <a href="/mazer/layouts/1-column">1 Column</a>
-                        </li>
-                        <li class="submenu-item <?= ($uri2 == 'vertical-navbar') ? 'active' : '' ?>">
-                            <a href="/mazer/layouts/vertical-navbar">Vertical with Navbar</a>
-                        </li>
-                        <li class="submenu-item <?= ($uri2 == 'horizontal') ? 'active' : '' ?>">
-                            <a href="/mazer/layouts/horizontal">Horizontal Menu</a>
-                        </li>
-                    </ul>
                 </li>
 
                 <li class="sidebar-title">Forms &amp; Tables</li>

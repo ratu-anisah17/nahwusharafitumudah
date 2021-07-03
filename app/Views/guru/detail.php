@@ -1,13 +1,11 @@
-<?= $this->extend('layout/template'); ?>
+<?= $this->extend('mazer/layouts/app') ?>
 
 <?= $this->section('content'); ?>
 
 <div class="container">
     <div class="row">
         <div class="col">
-            <center>
-                <h2 class="mt-2">Detail Ustadz/dzah</h2>
-            </center>
+            <h2>Detail Ustadz/dzah</h2>
             <div class="card" style="width: 25rem;">
                 <div class="card-body">
                     <h5 class="card-title">Nama : <?= $guru['nama']; ?></h5>
@@ -25,36 +23,42 @@
 
                 </div>
             </div>
-            <h4 class="mt-5">Santri yang dipegang</h4>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Angkatan</th>
-                        <th scope="col">Nomor HP</th>
-                        <th scope="col">Jilid</th>
-                        <th scope="col">Tgl Mulai</th>
-                        <th scope="col">Tgl Selesai</th>
-                        <th scope="col">Keterangan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $i = 1; ?>
-                    <?php foreach ($guru as $g) : ?>
-                        <tr>
-                            <th scope="row"><?= $i++; ?></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Santri yang dipegang</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Angkatan</th>
+                                <th scope="col">Nomor HP</th>
+                                <th scope="col">Jilid</th>
+                                <th scope="col">Tgl Mulai</th>
+                                <th scope="col">Tgl Selesai</th>
+                                <th scope="col">Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1; ?>
+                            <?php foreach ($guru as $g) : ?>
+                                <tr>
+                                    <th scope="row"><?= $i++; ?></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <a href="/guru">Kembali ke daftar Ustadz/dzah</a>
         </div>
     </div>
